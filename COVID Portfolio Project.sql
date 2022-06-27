@@ -2,7 +2,7 @@ SELECT *
 FROM PortfolioProject..CovidDeaths
 ORDER BY 3, 4
 --IF YOU EXPLORE THE DATA, IF CONTINENT IS NULL, THEN LOCATION IS THE CONTINENT
--- SO WE HAVE WEIRD VALUES FOR LOCATION SUCH AS WORLD, EUROPE, ASIA, SO WE REALIZE THERE'S A GROUPING ISSUE AT HAND
+-- SO WE HAVE WEIRD VALUES FOR LOCATION SUCH AS WORLD, EUROPE, ASIA... SO THERE'S A GROUPING ISSUE AT HAND
 -- TO ADDRESS THIS ISSUE, WE SHOULD SPECIFY FOR ALL OUR QUERIES, WHERE CONTINENT IS NOT NULL 
 
 SELECT * 
@@ -50,8 +50,6 @@ FROM PortfolioProject..CovidDeaths
 --WHERE location like '%states%' AND continent IS NOT NULL 
 GROUP BY location, population
 ORDER BY InfectedPercentage DESC
-
-
 
 
 -- Showing Countries with Highest Death Count per Population
@@ -149,8 +147,7 @@ and dea.date = vac.date
 WHERE dea.continent IS NOT NULL
 ORDER BY 1,2,3
 --When you order by multiple columns, it's because there's a tie in some records, so you can order by a 2nd or even 3rd column 
---here I am not entirely sure why Alex has ordered it like this (because the dates are all different for same location) 
---Maybe he did it this way just to make sure
+-- In our case we don't really need to order by the third column because all the locations have different dates
  
  SELECT dea.continent, dea.location, dea.date, population, new_vaccinations
 FROM PortfolioProject..CovidDeaths dea
@@ -168,7 +165,7 @@ ON dea.location = vac.location
 and dea.date = vac.date
 WHERE dea.continent IS NOT NULL
 ORDER BY 2
---This ordering so we can look at Afghanistan first
+--This ordering so we can look at Afghanistan first (we are ordering by location)
 
  SELECT dea.continent, dea.location, dea.date, population, new_vaccinations,
  SUM(CONVERT(int,vac.new_vaccinations)) OVER (PARTITION BY dea.location)
@@ -240,7 +237,7 @@ JOIN  PortfolioProject..CovidVaccinations vac
 ON dea.location = vac.location
 and dea.date = vac.date
 WHERE dea.continent IS NOT NULL
---ORDER BY 2
+
 
 SELECT *, (RollingPeopleVaccinated/population)*100 
 FROM #PercentPopulationVaccinated
@@ -256,4 +253,3 @@ JOIN  PortfolioProject..CovidVaccinations vac
 ON dea.location = vac.location
 and dea.date = vac.date
 WHERE dea.continent IS NOT NULL
---ORDER BY 2
