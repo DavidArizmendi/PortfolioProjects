@@ -1,3 +1,8 @@
+-- These queries show some of the analysis I can do using SQL 
+-- I used some of these queries to create visualizations on Tableau 
+
+
+
 SELECT * 
 FROM PortfolioProject..CovidDeaths
 ORDER BY 3, 4
