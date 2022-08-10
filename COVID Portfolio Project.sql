@@ -135,9 +135,30 @@ ORDER BY 1, 2
 --USED FOR TABLEAU VISUALIZATION AS TABLE 1
 
 
+SELECT location, SUM(cast(new_deaths as int)) AS TotalDeathCount 
+FROM PortfolioProject..CovidDeaths
+--WHERE location like '%states%'
+WHERE continent IS NULL 
+AND location not in ('World', 'European Union', 'International')
+GROUP BY location
+ORDER BY TotalDeathCount DESC
+--USED FOR TABLEAU VISUALIZATION AS TABLE 2
 
 
+SELECT location, population, MAX(total_cases) AS HighestInfectionCount, MAX(total_cases/population) *100 AS PercentPopulationInfected
+FROM PortfolioProject..CovidDeaths
+--WHERE location like '%states%'
+GROUP BY location, population
+ORDER BY PercentPopulationInfected DESC
+--USED FOR TABLEAU VISUALIZATION AS TABLE 3
 
+
+SELECT Location, population, date, MAX(total_cases) AS HighestInfectionCount, MAX((total_cases/population))*100 AS InfectedPercentage
+FROM PortfolioProject..CovidDeaths
+--WHERE location like '%states%' AND continent IS NOT NULL 
+GROUP BY location, population, date
+ORDER BY InfectedPercentage DESC
+--USED FOR TABLEAU VISUALIZATION AS TABLE 4
 
 
 
