@@ -14,9 +14,10 @@ WHERE continent IS NOT NULL
 ORDER BY 3, 4
 
 
---SELECT * 
---FROM PortfolioProject..CovidVaccinations
---ORDER BY 3, 4
+SELECT * 
+FROM PortfolioProject..CovidVaccinations
+ORDER BY 3, 4
+
 
 -- Select Data that we are going to be using 
 
@@ -29,14 +30,15 @@ ORDER BY 1, 2
 -- Looking at Total Cases vs Total Deaths 
 -- Shows the likelihood of dying if you contract Covid in your country
 
---SELECT Location, date, total_cases, total_deaths, (total_deaths/total_cases)*100 AS DeathPercentage
---FROM PortfolioProject..CovidDeaths
---ORDER BY 1, 2
+SELECT Location, date, total_cases, total_deaths, (total_deaths/total_cases)*100 AS DeathPercentage
+FROM PortfolioProject..CovidDeaths
+ORDER BY 1, 2
 
 SELECT Location, date, total_cases, total_deaths, (total_deaths/total_cases)*100 AS DeathPercentage
 FROM PortfolioProject..CovidDeaths
 WHERE location like '%states%' AND continent IS NOT NULL 
 ORDER BY 1, 2 
+
 
 -- Looking at the Total Cases vs Population
 --Shows what percentage of population got Covid
@@ -45,6 +47,7 @@ SELECT Location, date, population, total_cases, (total_cases/population)*100 AS 
 FROM PortfolioProject..CovidDeaths
 WHERE location like '%states%' AND continent IS NOT NULL 
 ORDER BY 1, 2
+
 
 -- Looking at countries with highest infection rate compared to population 
 
@@ -120,6 +123,8 @@ GROUP BY date
 ORDER BY 1, 2 
 --This one is grouped by date 
 
+
+
 --We can remove the date to see the total global numbers 
 SELECT SUM(new_cases) AS Total_cases, SUM(cast(new_deaths as int)) AS Total_deaths, 
 SUM(cast(new_deaths as int))/SUM(new_cases) *100 AS DeathPercentage
@@ -127,6 +132,13 @@ FROM PortfolioProject..CovidDeaths
 --WHERE location like '%states%'
 WHERE continent IS NOT NULL 
 ORDER BY 1, 2 
+--USED FOR TABLEAU VISUALIZATION AS TABLE 1
+
+
+
+
+
+
 
 
 --Looking at data from the other dataset (vaccinations) or table 
