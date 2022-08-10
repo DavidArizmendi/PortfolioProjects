@@ -1,5 +1,8 @@
--- These queries show some of the analysis I can do using SQL 
--- I used some of these queries to create visualizations on Tableau 
+--THIS IS A COVID-19 RELATED PROJECT 
+
+--THESE QUERIES SHOW SOME OF THE ANALYSIS I CAN DO USING SQL 
+--I USED 4 OF THESE QUERIES TO CREATE VISUALIZATIONS ON TABLEAU (I HAVE INDICATED WHICH)
+--HERE IS THE LINK TO MY TABLEAU PUBLIC: 
 
 SELECT * 
 FROM PortfolioProject..CovidDeaths
@@ -185,7 +188,7 @@ ORDER BY 1,2,3
 --When you order by multiple columns, it's because there's a tie in some records, so you can order by a 2nd or even 3rd column 
 -- In our case we don't really need to order by the third column because all the locations have different dates
  
- SELECT dea.continent, dea.location, dea.date, population, new_vaccinations
+SELECT dea.continent, dea.location, dea.date, population, new_vaccinations
 FROM PortfolioProject..CovidDeaths dea
 JOIN  PortfolioProject..CovidVaccinations vac
 ON dea.location = vac.location
@@ -194,7 +197,7 @@ WHERE dea.continent IS NOT NULL
 ORDER BY 1,2
 --This shows that you do not need the 3rd column of date (as we get the same output as above)
 
- SELECT dea.continent, dea.location, dea.date, population, new_vaccinations
+SELECT dea.continent, dea.location, dea.date, population, new_vaccinations
 FROM PortfolioProject..CovidDeaths dea
 JOIN  PortfolioProject..CovidVaccinations vac
 ON dea.location = vac.location
@@ -203,8 +206,8 @@ WHERE dea.continent IS NOT NULL
 ORDER BY 2
 --This ordering so we can look at Afghanistan first (we are ordering by location)
 
- SELECT dea.continent, dea.location, dea.date, population, new_vaccinations,
- SUM(CONVERT(int,vac.new_vaccinations)) OVER (PARTITION BY dea.location)
+SELECT dea.continent, dea.location, dea.date, population, new_vaccinations,
+SUM(CONVERT(int,vac.new_vaccinations)) OVER (PARTITION BY dea.location)
 FROM PortfolioProject..CovidDeaths dea
 JOIN  PortfolioProject..CovidVaccinations vac
 ON dea.location = vac.location
@@ -216,8 +219,8 @@ ORDER BY 2
 --The problem with this partitioning is that the partition column would have the same value for a location in every single row (it would be the total number of vaccinations)
 --ALSO... Notice how we casted the new_vaccinations into int by using the CONVERT 
 
- SELECT dea.continent, dea.location, dea.date, population, new_vaccinations,
- SUM(CONVERT(int,vac.new_vaccinations)) OVER (PARTITION BY dea.location ORDER BY dea.location, dea.date) AS RollingPeopleVaccinated
+SELECT dea.continent, dea.location, dea.date, population, new_vaccinations,
+SUM(CONVERT(int,vac.new_vaccinations)) OVER (PARTITION BY dea.location ORDER BY dea.location, dea.date) AS RollingPeopleVaccinated
 FROM PortfolioProject..CovidDeaths dea
 JOIN  PortfolioProject..CovidVaccinations vac
 ON dea.location = vac.location
