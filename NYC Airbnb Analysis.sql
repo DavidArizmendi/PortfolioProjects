@@ -167,7 +167,9 @@ HAVING overall_rating BETWEEN (AVG(overall_rating) - 10)
 AND (AVG(overall_rating) + 10);
 
 
-SECTION 2
+
+--SECTION 2
+
 
 --1) Do an inner join of listings and hosts based on host_id. Return the listing's title, neighborhood, and price as well as the host's name (aliased as "host_name") and response_time.
 
