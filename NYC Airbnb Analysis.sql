@@ -3,7 +3,7 @@
 
 --THESE QUERIES SHOW SOME OF THE ANALYSIS I CAN DO USING SQL 
 --THESE DATA CAN ALSO BE VISUALIZED ON TABLEAU, WHICH I HAVE DONE:
---HERE IS THE LINK TO MY NYC AIRBNB DASHBOARD: https://public.tableau.com/app/profile/david.arizmendi.flores/viz/CovidDashboard_16575819894190/Dashboard1
+--HERE IS THE LINK TO MY NYC AIRBNB DASHBOARD: https://public.tableau.com/app/profile/david.arizmendi.flores
 
 --I WILL ALSO LEAVE THE LINK TO MY TABLEAU PUBLIC WHERE I HAVE ADDED SOME OF THE ANALYSES I DO FOR FUN (: 
 --TABLEAU PUBLIC: https://public.tableau.com/app/profile/david.arizmendi.flores
