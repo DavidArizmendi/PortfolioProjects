@@ -72,13 +72,12 @@ LIMIT 10;
 
 --11) Return all the listings that have an overall rating below 10 or above 89. Alias the rating column as "listing_rating".
 
-
 SELECT listing_id, overall_rating AS listing_rating
 FROM review_scores
 WHERE overall_rating NOT BETWEEN 11 AND 89;
 
---12) Return the listing ID and neighborhood of all listings located in a neighborhood whose name includes "Heights".
 
+--12) Return the listing ID and neighborhood of all listings located in a neighborhood whose name includes "Heights".
 
 SELECT listing_id, neighborhood
 FROM listings
@@ -86,7 +85,6 @@ WHERE neighborhood LIKE '%Heights%';
 
 
 --13) How many superhosts registered with Airbnb in 2012?
-
 
 SELECT COUNT(host_id)
 FROM hosts
