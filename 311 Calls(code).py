@@ -1,7 +1,9 @@
+# NYC 311 Calls Analysis ( Data Visualization Project using Python)
+
 # THIS IS ONLY THE CODE. 
 # TO SEE THE WHOLE PROJECT WITH THE VISUALIZATIONS, PLEASE GO TO: https://colab.research.google.com/drive/1AL3Cv4bkBNDrWZuHTM6henVgYs1qA83O?usp=sharing
 
-# NYC 311 Calls Analysis ( Data Visualization Project using Python)
+
 # Team members: David Arizmendi, Yang Song, Omar Lazaro
 # Source: NYC open data. Because the original dataset is quite large (26million rows for 1 year), we narrowed it down to one month of data - April 2022
 # Original source: https://data.cityofnewyork.us/Social-Services/311-Service-Requests-from-2010-to-Present/erm2-nwe9
