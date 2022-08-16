@@ -30,7 +30,7 @@ while(Quote == "y"):
         mins = int(input("How many minutes do you need? "))
         PhoneCharges += (mins * .50)
     
-    print("Your monthly charge is " + str(RentCharges + PhoneCharges))
+    print("Your monthly charge is $" + str(RentCharges + PhoneCharges))
     
     Count += 1 
     Estimate += RentCharges + PhoneCharges
@@ -39,7 +39,7 @@ while(Quote == "y"):
     if Quote != "y":
         break
     
-print("Average quotation provided was " + str(Estimate/Count))
+print("Average quotation provided was $" + str(Estimate/Count))
 
 if Quote != "y":
     print("Press any key to continue...")
