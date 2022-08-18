@@ -3,9 +3,10 @@
 -- THEN I DREW A DIAGRAM THAT ILLUSTRATED THE RELATIONSHIPS BETWEEN THE ENTITIES (DIAGRAM CAN BE FOUND UNDER ISSUES AS "YouTube Clone - ER Model")
 -- THEN I CREATED A TABLE FOR EACH ENTITY, MAKING SURE I SPECIFIED THE RIGHT DATA TYPE FOR EACH OF THEIR ATTRIBUTES.
 --... I ALSO LINKED THE RELATED TABLES USING FOREIGN KEYS (THIS STEP IS SHOWN BELOW)
--- THEN I ADDED DATA INTO THE TABLES. THIS CAN BE DONE MANUALLY AS WELL
+-- THEN I ADDED DATA INTO THE TABLES. THIS CAN BE DONE MANUALLY AS WELL (I ADDED A MADE UP EXAMPLE BELOW UNDER DATA INSERTION)
 -- FINALLY, I WROTE QUERIES TO EXTRACT INSIGHTFUL DATA WHICH CAN BE FURTHER ANALYZED (COULD BE VISUALLY THROUGH TOOLS SUCH AS TABLEAU)...
 --...I HAVE INLCUDED SOME OF THESE QUERIES BELOW
+
 
 
 -- TABLE CREATION
@@ -101,6 +102,113 @@ CREATE TABLE Video_Ad (
   CONSTRAINT Video_fk FOREIGN KEY (Video_ID) REFERENCES Video (Video_ID),
   CONSTRAINT Ad_fk FOREIGN KEY (Ad_ID) REFERENCES Ad (Ad_ID)
   );
+  
+  
+  
+  
+  
+  -- DATA INSERTION
+  
+  
+  INSERT INTO Platform_User (First_Name, Last_Name, Email, Phone_Number, Gender)
+VALUES 
+	('David', 'Arizmendi', 'david.arizmendi@gmail.com', '0', 'Male'), 
+	('Stelios', 'Markou', 'stelios.markou15@gmail.com', '1', 'Male'),
+	('Ruhma', 'Shahbaz', 'Ruhmamogul@gmail.com', '2', 'Female'),
+	('Husnian', 'Ahmad', 'Husnian.Ali.Ahmad@gmail.com', '3', 'Male'),
+	('Mottaqui', 'Karim', 'Notorious.Taq@gmail.com', '4', 'Male'),
+	('Onindita', 'Afrin', 'O.Afrin@gmail.com', '5', 'Female'),
+	('Axel', 'Torres', 'axe@gmail.com', '6', 'Male'),
+	('Sebastian', 'Salomon', 'sebas@gmail.com', '7', 'Male'),
+	('Julia', 'Laverquist', 'julia@gmail.com', '8', 'Female'),
+	('Kimberly', 'Klein', 'kk@gmail.com', '9', 'Female'),
+	('Lucas', 'Cruz', 'lucas@gmail.com', '10', 'Male'),
+	('Sophia', 'Browne', 'sophia@gmail.com', '11', 'Female'),
+	('Jose', 'Villagordoa', 'jose@gmail.com', '12', 'Male'),
+	('Juan', 'Perez', 'juan@gmail.com', '13', 'Male'),
+	('Mary', 'Garcia', 'mary@gmail.com', '14', 'Female'),
+	('Alexandra', 'Rodriguez', 'alexandra@gmail.com', '15', 'Female'),
+	('Valentina', 'Ayala', 'vale@gmail.com', '16', 'Female'),
+	('Edward', 'Johnson', 'ed@gmail.com', '17', 'Male'),
+	('Jamison', 'Fernandez', 'jamison@gmail.com', '18', 'Female'),
+	('Elizabeth', 'Adams', 'elizabeth@gmail.com', '19', 'Female');
+
+
+INSERT INTO channel (Name, Subscribers, Location, Joined, Type, User_ID)
+VALUES 
+	('MrDaves94', 1000000, 'United States', '2012-06-25', 'Lifestyle', 1),
+	('TheRealStelios', 500000, 'United States', '2010-01-01', 'Music', 2),
+	('Shahbaz Queen', 750000, 'Pakistan', '2020-01-12', 'Fashion', 3),
+	('Husnian the Man', 500000, 'United States', '2019-03-13', 'Tech', 4),
+	('Notorious Taq', 69, 'United States', '2018-02-05', 'Comedy', 5),
+	('Onindita the Ninja', 2, 'United States', '2018-05-12', 'Gaming', 6),
+	('Axethedrummer', 10000, 'Mexico', '2011-07-19', 'Music', 7),
+	('Rey Salomon', 2500, 'Mexico', '2012-08-20', 'Tech', 8),
+	('SwedishGirl12', 200, 'Sweden', '2019-11-04', 'Beauty', 9),
+	('Kklein', 15, 'Switzerland', '2020-02-14', 'Lifestyle', 10),
+	('Brazil Rules', 35000, 'Brazil', '2014-06-11', 'Sports', 11),
+	('Soph Browne', 50, 'United States', '2017-01-10', 'Beauty', 12),
+	('Arriba el America', 250000, 'Mexico', '2017-09-15', 'Sports', 13),
+	('Chevere HP', 12000, 'Colombia', '2018-04-02', 'Comedy', 14),
+	('Beautiful World', 350000, 'United States', '2013-05-22', 'Travel', 15),
+	('Sasha’s Closet', 1500, 'Russia', '2020-05-05', 'Fashion', 16),
+	('Videos Chistosos', 20000, 'Mexico', '2019-06-20', 'Comedy',17),
+	('Alpha Ed', 800000, 'United States', '2013-07-04', 'Lifestyle',18),
+	('Beauty Tips For You', 345000, 'United States', '2015-08-12', 'Beauty',19),
+	('Personal Finance Explained', 900000, 'United States', '2020-02-01', 'Lifestyle',20);
+
+INSERT INTO Video (Title, Date, Description, Duration, Views, Likes, Dislikes, Genre, File_Size, Video_Format, Channel_ID)
+VALUES 
+	('David1', '2012-06-23', 'Hello', 10.5, 100000, 80000, 1200, 'Tutorial', 10.5, 'MPEG4', 1),
+	('coronavirus', '2020-02-12', 'Corona', 65.5, 1500000, 1250000, 50000, 'Educational', 65.5, 'MPEG',2),
+	('coronavirus', '2020-03-05', 'Corona is here', 62.7, 1000000, 700000, 25000, 'Music', 62.7, 'MP4',7),
+	('Ruhma1', '2018-05-12', 'Hey', 8.4, 750000, 400000, 2, 'Product Review', 8.4, 'WebM',3),
+	('Husnian1', '2012-08-20', 'Hello', 9.3, 350000, 350, 10, 'Tutorial', 9.3, 'MP4',4),
+	('Taq1', '2020-02-14', 'I am mean', 70.5, 250, 1, 249, 'Comedy', 70.5, 'MP4', 5),
+	('Axel1', '2017-01-10', 'drums', 8.2, 15000, 2000, 45, 'Music', 8.2, 'FLV',7),
+	('Lucas1', '2020-05-05', 'Brazil', 15.8, 250000, 150000, 20000, 'Sports', 15.8, 'WebM',11),
+	('Jamison2', '2018-05-12', 'Tips', 5.5, 20000, 20000, 0, 'Tutorial', 5.5, 'MP4',19),
+	('Elizabeth1', '2011-07-19', 'Invest', 10.4, 50000, 25000, 2000, 'Educational', 10.4, 'MP4',20);
+
+INSERT INTO Comment (Replies, Likes, Dislikes, Pinned, Mentions,User_ID,Video_ID)
+VALUES 
+	(1, 0, 3, FALSE, 0,1,10),
+	(0, 1, 0, FALSE, 1,2,2),
+	(5, 2, 1, FALSE, 2,3,10),
+	(0, 3, 1, FALSE, 0,4,9),
+	(3, 5, 2, FALSE, 0,5,8),
+	(1, 7, 3, FALSE, 1,6,7),
+	(0, 8, 2, FALSE, 2,7,6),
+	(1, 10, 4, FALSE, 0,8,5),
+	(0, 12, 1, TRUE, 0,9,4),
+	(0, 13, 6, TRUE, 0,10,3),
+	(1, 15, 1, TRUE, 0,11,2),
+	(2, 20, 4, TRUE, 0,12,1);
+
+
+INSERT INTO marketer (Name, Type, Website)
+VALUES
+	('Protect the Earth', 'Non-Profit', 'Protecttheearth.org'), 
+	('Investment Guru', 'For-Profit', 'Invguru.com'),
+	('Microhard', 'For-Profit', 'Microhard.com'),
+	('Orange', 'For-Profit', 'Orange.com'),
+	('We Care', 'Non-Profit', 'Wecare.org');
+
+INSERT INTO ad (Type, Duration, Views, Payment_Per_View,Marketer_ID)
+VALUES
+	('skippable', 30, 500000, 0.15,1),
+	('non-skippable', 15, 600000, 0.2,4),
+	('skippable', 20, 700000, 0.16,3),
+	('skippable', 25, 500000, 0.25,5),
+	('skippable', 22, 500000, 0.18,1),
+	('skippable', 30, 500000, 0.17,2),
+	('skippable', 60, 500000, 0.25,2),
+	('non-skippable', 30, 500000, 0.3,5),
+	('skippable', 25, 500000, 0.18,3),
+	('non-skippable', 24, 500000, 0.14,4),
+	('non-skippable', 15, 500000, 0.15,3),
+	('skippable', 15, 500000, 0.1,1);
+
   
   
   
