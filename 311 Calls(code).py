@@ -1,7 +1,9 @@
 # NYC 311 Calls Analysis ( Data Visualization Project using Python)
 
 # THIS IS ONLY THE CODE. 
-# TO SEE THE WHOLE PROJECT WITH THE VISUALIZATIONS, PLEASE GO TO: https://colab.research.google.com/drive/1AL3Cv4bkBNDrWZuHTM6henVgYs1qA83O?usp=sharing
+# TO SEE THE WHOLE PROJECT WITH THE VISUALIZATIONS (YOU CAN SCROLL DOWN ALL THE WAY TO THE BOTTOM TO SEE THE VISUALIZATIONS, WHICH WE PUT TOGETHER)... 
+# ...PLEASE GO TO: https://colab.research.google.com/drive/1AL3Cv4bkBNDrWZuHTM6henVgYs1qA83O?usp=sharing
+
 
 
 # Team members: David Arizmendi, Yang Song, Omar Lazaro
